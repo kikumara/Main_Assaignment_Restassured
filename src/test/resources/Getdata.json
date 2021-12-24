@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": [],
+  "examples": [
+    [
+      {
+        "id": 1,
+        "userId": 1,
+        "date": "2020-03-02T00:00:02.000Z",
+        "products": [
+          {
+            "productId": 1,
+            "quantity": 4
+          },
+          {
+            "productId": 2,
+            "quantity": 1
+          },
+          {
+            "productId": 3,
+            "quantity": 6
+          }
+        ],
+        "__v": 0
+      },
+      {
+        "id": 2,
+        "userId": 1,
+        "date": "2020-01-02T00:00:02.000Z",
+        "products": [
+          {
+            "productId": 2,
+            "quantity": 4
+          },
+          {
+            "productId": 1,
+            "quantity": 10
+          },
+          {
+            "productId": 5,
+            "quantity": 2
+          }
+        ],
+        "__v": 0
+      }
+    ]
+  ],
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "$id": "#/items/anyOf/0",
+        "type": "object",
+        "title": "The first anyOf schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "id": 1,
+            "userId": 1,
+            "date": "2020-03-02T00:00:02.000Z",
+            "products": [
+              {
+                "productId": 1,
+                "quantity": 4
+              },
+              {
+                "productId": 2,
+                "quantity": 1
+              },
+              {
+                "productId": 3,
+                "quantity": 6
+              }
+            ],
+            "__v": 0
+          }
+        ],
+        "required": [
+          "id",
+          "userId",
+          "date",
+          "products",
+          "__v"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/items/anyOf/0/properties/id",
+            "type": "integer",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "userId": {
+            "$id": "#/items/anyOf/0/properties/userId",
+            "type": "integer",
+            "title": "The userId schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "date": {
+            "$id": "#/items/anyOf/0/properties/date",
+            "type": "string",
+            "title": "The date schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "2020-03-02T00:00:02.000Z"
+            ]
+          },
+          "products": {
+            "$id": "#/items/anyOf/0/properties/products",
+            "type": "array",
+            "title": "The products schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+              [
+                {
+                  "productId": 1,
+                  "quantity": 4
+                },
+                {
+                  "productId": 2,
+                  "quantity": 1
+                }
+              ]
+            ],
+            "additionalItems": true,
+            "items": {
+              "$id": "#/items/anyOf/0/properties/products/items",
+              "anyOf": [
+                {
+                  "$id": "#/items/anyOf/0/properties/products/items/anyOf/0",
+                  "type": "object",
+                  "title": "The first anyOf schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                    {
+                      "productId": 1,
+                      "quantity": 4
+                    }
+                  ],
+                  "required": [
+                    "productId",
+                    "quantity"
+                  ],
+                  "properties": {
+                    "productId": {
+                      "$id": "#/items/anyOf/0/properties/products/items/anyOf/0/properties/productId",
+                      "type": "integer",
+                      "title": "The productId schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        1
+                      ]
+                    },
+                    "quantity": {
+                      "$id": "#/items/anyOf/0/properties/products/items/anyOf/0/properties/quantity",
+                      "type": "integer",
+                      "title": "The quantity schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": 0,
+                      "examples": [
+                        4
+                      ]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              ]
+            }
+          },
+          "__v": {
+            "$id": "#/items/anyOf/0/properties/__v",
+            "type": "integer",
+            "title": "The __v schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    ]
+  }
+}
